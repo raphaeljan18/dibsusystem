@@ -1,0 +1,55 @@
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingInput" value="{{this.title}}" placeholder="Title" name="title">
+      <label for="floatingInput">Title</label>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingInput" value="{{this.date}}" placeholder="date" name="date">
+      <label for="floatingInput">As of Date (eg. 011200H January 2022)</label>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <textarea type="text" class="form-control" id="floatingInput" style="height:200px; width: 550px;" value="{{this.body}}" placeholder="Body" name="body"></textarea>
+      <label for="floatingInput">Body</label>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <textarea type="text" class="form-control" id="floatingInput" style="height:200px; width: 550px;" value="{{this.assessment}}" placeholder="Assessment" name="assessment"></textarea>
+      <label for="floatingInput">Assessment</label>
+    </div>
+  </div>
+  
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingInput" value="{{this.url}}" placeholder="URL" name="url">
+      <label for="floatingInput">URL</label>
+    </div>
+  </div>
+   <div class="col-6">
+    <div class="form-floating mb-3">
+      <select type="text" class="form-control" id="floatingInput" value="{{this.domfor}}" placeholder="domfor" name="domfor">
+        <option>Domestic</option>
+        <option>Foreign</option>
+      </select>
+      <label for="floatingInput">Domestic or Foreign</label>
+    </div>
+  </div>
+
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <select class="form-control" id="floatinginput" placeholer="dibOrDisu" name="dibOrDisu" value="this.DibOrDisu">
+        <option>DIB</option>
+        <option>DISU</option>
+      </select>
+      {{!-- <input type="op" class="form-control" id="floatingInput" value="{{this.DibOrDisu}}" placeholder="dibOrDisu" name="dibOrDisu"> --}}
+      <label for="floatingInput">DIB or DISU</label>
+    </div>
+  </div>
+  
+  <div class="col-12 d-grid">
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </div>
