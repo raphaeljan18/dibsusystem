@@ -9,33 +9,45 @@
   {{#each rows}}
   <div class="row">
     <div class="col">
-      <table class="table" style="width: 100%;">
-        <thead>
-          <tr>
-            <th scope="col">Title</th>
-            <th scope="col">Body</th>
-            <th scope="col">Assessment</th>
-            <th scope="col">Date</th>
-            <th scope="col">URL</th>
-            <th scope="col">Domestic or Foreign</th>
-            <th scope="col">DIB or DISU</th>
-            
-          </tr>
-        </thead>
+    
+      <table>
+        <tr>
+            <th scope="col" style="font-size: 30px;">{{this.title}}</th>
+        </tr>
+        <tr>
+          <td>{{this.domfor}} , {{this.DibOrDisu}} As of : {{this.date}}</td>
+        </tr>
+        <div class="col-6 d-flex justify-content-end">
+            <a href="/addVulnerabilities/{{this.id}}" type="button" class="btn btn-primary align-self-center">+ Add Vulnerability</a>
+       </div>
+      </table>
+    
+      <table class="table">
+        <tr>
+            <th scope="col">Developments</th>
+        </tr>
+        <tr>
+          <td scope="col">{{this.body}}</td>
+        </tr>
+      </table>
+    
+      <table class="table">
+        <tr>
+            <th scope="col">Analysis</th>
+        </tr>
+        <tr>
+            <td scope="col">{{this.assessment}}</td>
+        </tr>
+      </table>
+      
+      <table class="table">
         <tbody>
           <tr>
-            <th scope="row">{{this.title}}</th>
-            <td>{{this.body}}</td>
-            <td>{{this.assessment}}</td>
-            <td>{{this.date}}</td>
-            <td>{{this.url}}</td>
-            <td>{{this.domfor}}</td>
-            <td>{{this.DibOrDisu}}</td>
-            <td><a href="/downloadDisuAsWord/{{this.id}}" type="button" class="btn btn-light btn-small"><i class="bi-download"></i> Download {{this.DibOrDisu}} as Word file</a>
-</td>
+            <td><a href="/downloadDisuAsWord/{{this.id}}" type="button" class="btn btn-light btn-small"><i class="bi-download"></i> Download {{this.DibOrDisu}} as Word file</a></td>
           </tr>
         </tbody>
       </table>
+    
     </div>
   </div>
   {{/each}}

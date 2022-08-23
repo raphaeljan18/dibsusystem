@@ -73,7 +73,7 @@ const assessments = new Paragraph({
     alignment:AlignmentType.LEFT,
     children: [
         new TextRun({
-            text: `Assessments`,
+            text: `Analysis`,
             font: "Arial",
             size: 24,
             bold: true,
@@ -347,11 +347,25 @@ const sign = new Paragraph({
     ]
 
 })
+
+const sigVulnerabilities = new Paragraph({
+    alignment: AlignmentType.LEFT,
+    children: [
+        new TextRun({
+            text: `Significant Vulnerabilities`,
+            bold: true,
+            underline: true,
+            font: `Arial`,
+            size: 22
+        })
+    ]
+})
+
 let downloadthis;
 const doc = new Document({
-        creator: "Raph",
-        title: "DISU",
-        description: "disu",
+        creator: "Researcher",
+        title: "",
+        description: "",
 
         sections: [{
             
@@ -621,7 +635,7 @@ function sleep(ms) {
 }
 // User the connection
 const getDoc = (docId, res) => {
-connection.query('SELECT * FROM disu WHERE id = ?', [docId], async (err, row) => {
+connection.query('SELECT * FROM docs WHERE id = ?', [docId], async (err, row) => {
      if (!err) {
         if(row.length) {
             documentData = row[0];

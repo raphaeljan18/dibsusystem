@@ -40,7 +40,6 @@ exports.form = (req, res) => {
 // Add new document
 exports.create = (req, res) => {
   const {title, body, assessment, date, url, domfor, dibOrDisu} = req.body;
-  let searchTerm = req.body.search;
   connection.query('INSERT INTO docs SET title = ?, body = ?, assessment = ?, date = ?, url = ?, domfor = ?, DibOrDisu = ?', [title, body, assessment, date, url, domfor, dibOrDisu], (err, rows) => {
     if (!err) {
       res.render('add-document', { alert: 'Document added successfully.' });
@@ -110,6 +109,25 @@ exports.viewall = (req, res) => {
   });
 }
 
+exports.createVulnerability = (req, res) => {
+  console.log(req.params.id)
+  // const { vulnerability, vulDesc} = req.body;
+  // connection.query('INSERT INTO docs SET id = ?, Vulnerability = ?, VulDescription = ?', [req.params.id, vulnerability, vulDesc], (err, rows) => {
+  //   if (!err) {
+  //     res.render(`add-vulnerability`, { alert: 'Vulnerability added successfully.' });
+  //   } else {
+  //     console.log(err);
+  //   }
+  //   console.log( rows );
+  // });
+}
+
+
+exports.vulnerabilityForm = (req,res) => {
+    res.render(`add-vulnerability`);
+    console.log(req.params.id);
+}
+
 exports.downloadDisuAsWord =  (req, res) => {
   console.log(req.params.id);
   const filename =  getDoc(req.params.id, res);
@@ -123,3 +141,4 @@ exports.downloadDibAsWord =  (req, res) => {
   console.log('filename', filename)
   console.log(`Test ${filename} ${req.params.id}`);
 }
+
